@@ -1,0 +1,24 @@
+doctype
+html
+    head
+        meta(charset='UTF-8')
+        title= Login
+        meta(name='viewport' content='width=device-width, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        link(rel='stylesheet' href='/login.css')
+    body
+        form.loginForm(action='/v1/auth/login' method='post')
+            h2 Login
+            .idForm
+                input.id(type='text' name='memUserId' placeholder='ID')
+            .passForm
+                input.pw(type='password' name='password' placeholder='PW')
+            button.btn(type='submit')
+                | LOG IN
+            //script.
+                let button = () => {
+                    alert('login Button !')
+                }
+            .bottomText
+                | Don&apos;t you have ID? 
+                a(href='/join') Sign Up

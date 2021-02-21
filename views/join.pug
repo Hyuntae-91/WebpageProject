@@ -1,0 +1,67 @@
+doctype
+html
+    head
+        meta(charset='UTF-8')
+        title= Login
+        meta(name='viewport' content='width=device-width, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        link(rel='stylesheet' href='/join.css')
+    body
+      .joinForm
+        form(action='/v1/auth/join' method='post')
+          table
+            thead
+              caption Member Sign
+              colgroup
+                col(width="120")
+                col(width="500")
+            tbody
+              tr
+                th ID
+                td 
+                  input.inputForm(type='text' name='memUserId' maxlength=20)
+                td 
+                  input(type='button' name='checkRegister' onclick='isRegistered("memUserId")' value='중복확인')
+              tr
+                th E-Mail
+                td
+                  input.inputForm(type='email' name='memEmail')
+              tr
+                th Name
+                td 
+                  input.inputForm(type='text' name='name')
+              tr
+                th Nick Name
+                td
+                  input.inputForm(type='text' name='nick')
+              tr
+                th Password
+                td
+                  input.inputForm(type='password' name='password')
+              tr
+                th Sex
+                td
+                  fieldset.fieldForm
+                    radio.radioLabel(for='join-sex') Male
+                    input#join-sex(type='radio' value='0' name='sex')
+                    radio.radioLabel(for='join-sex') Female
+                    input#join-sex(type='radio' value='1' name='sex')
+              tr
+                th Address
+                td
+                  input.inputForm(type='text' name='address')
+              tr
+                th Phone
+                td 
+                  input.inputForm(type='text' name='phone' maxlength=16)
+            tfoot
+              tr
+                td(colspan="2")
+                  input.btn(type='submit' value="Register")
+                  input.btn(type="reset" value="Reset")
+    
+      script.
+        function isRegistered(memUserId) {
+          if () {
+          }
+        }

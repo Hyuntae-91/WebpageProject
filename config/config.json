@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "1234",
+    "database": "myproject",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "awsConnection": {
+    "username": "db_dev_hyuntae",
+    "password": "A010Ws_Vental!_99",
+    "database": "mywebproject-aws",
+    "host": "mywebproject-aws.cpcua7gvvynx.ap-northeast-2.rds.amazonaws.com",
+    "port": "33060",
+    "dialect": "mysql"
+  }
+}

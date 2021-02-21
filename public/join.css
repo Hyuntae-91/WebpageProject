@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.btn {
+    position: relative;
+    left: 20%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    width: 30%;
+    height: 30px;
+    background-color: #333;
+    background-position: left;
+    background-size: 100%;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+    display: inline;
+}
+
+.bottomText {
+    text-align: center;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+    border-radius: 4px;
+    height: 37px;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+@media screen and (min-width: 800px) {
+    .joinForm {
+        position: absolute;
+        padding: 30px, 20px;
+        background-color: #9dafc7;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+    }
+
+    table, td {
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    th {
+        border: 1px solid #333333;
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    caption {
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: underline;
+        padding: 20px;
+    }
+
+    thead, th {
+        background-color: #FC6;
+    }
+
+    tfoot {
+        text-align: center;
+    }
+
+    tbody a { color: #333; }
+    tbody a:visited {
+        font-size: 12px;
+        color:#333;
+        font-family: 굴림;
+        text-decoration: none;
+    }
+    tbody a:hover { text-decoration: underline; }
+    tbody a:active { font-size:13px; font-family:궁서; }
+
+    tfoot a { color:#06F; }
+    tfoot a:link {
+        font-size:10pt;
+        font-family:굴림;
+        text-decoration:none;
+    }
+    
+    tfoot a:visited {
+        font-size:12px;
+        font-family:굴림;
+        text-decoration:none;
+            
+    }
+    tfoot a:hover { text-decoration:underline; }
+    tfoot a:active { font-size:13px; font-family:궁서; }
+
+    .inputForm {
+        width: 100%;
+        border: none;
+        outline: none;
+        color: #636e72;
+        font-size: 16px;
+        height: 25px;
+        background: none;
+        background-color: #FFFFFF;
+    }
+
+    .fieldForm {
+        border: none;
+        outline: none;
+    }
+
+    .radioLabel {
+        margin-left: 20px;
+    }
+}

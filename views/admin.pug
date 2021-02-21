@@ -1,0 +1,15 @@
+extends layout
+
+block sectionContent
+  if member.memAuth > 5
+    
+
+  else
+    script.
+      function notHaveAuth() {
+        alert("You don't have permission to access this page!");
+        location.href='/';
+      }
+      notHaveAuth()
+
+  script.

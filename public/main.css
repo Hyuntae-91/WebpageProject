@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #9c9c9c;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0 5px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid silver;
+    color: crimson;
+    height: 27px;
+    line-height: 27px;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea {
+    border-radius: 4px;
+    height: 37px;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+@media screen and (min-width: 800px) {
+    header {
+        background-color: lightgrey;
+        height: 100px;
+    }
+
+    nav {
+        width: 1000px;
+        height: 30px;
+        margin: 0 auto;
+    }
+
+    section {
+        width: 200px;
+        text-align: left;
+        float: left;
+        padding: 10px;
+    }
+
+    footer {
+        background-color: #FFCC00;
+        height: 100px;
+        clear: both;
+    }
+
+    header, nav, section, footer { text-align: center; }
+    header, footer { line-height: 100px; }
+    section { line-height: 240px; }
+
+    .topHeader {
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .topHeaderH1 {
+        margin: 10px;
+    }
+
+    .member-name {
+        float: right;
+        font-size: 25px;
+        color: blue;
+    }
+
+    .myInfoSection {
+        position: relative;
+        top: -74px;
+        margin-right: 10px;
+        float: right;
+        font-size: 16px;
+        padding: 10px;
+        background-color: #FFCCCC;
+        border-radius: 4px;
+        border: 1px solid silver;
+        height: 80px;
+    }
+
+    #my-profile, #logout {
+        margin-top: 3px;
+    }
+
+    .mainLi {
+        list-style: none;
+        color: white;
+        background-color: #2d2d2d;
+        float: left;
+        line-height: 30px;
+        vertical-align: middle;
+        text-align: center;
+        border: 0.5px solid #3e3e3e;
+    }
+
+    .mainLi:hover ul {
+        display: block;
+    }
+    
+    .mainLink {
+        text-decoration: none;
+        color: white;
+        display: block;
+        width: 200px;
+        height: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "Trebuchet MS", Dotum, Arial;
+        background-color: #2d2d2d;
+        border: none;
+    }
+    
+    .mainLink:hover {
+        color: red;
+        background-color: #4d4d4d;
+    }
+
+    .subUl {
+        list-style: none;
+        display: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        background-color: #2d2d2d;
+        text-decoration: none;
+        width: 200px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "Trebuchet MS", Dotum, Arial;
+    }
+
+    .subLi {
+        list-style: none;
+        float: none;
+        vertical-align: middle;
+        text-align: center;
+        border: 0.5px solid #3e3e3e;
+    }
+
+    .subLi:hover a {
+        display: block;
+        color: red;
+        background-color: #4d4d4d;
+    }
+
+    .subLink {
+        text-decoration: none;
+        color: white;
+        background-color: #2d2d2d;
+        display: block;
+        border: none;
+        width: 200px;
+        height: 30px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "Trebuchet MS", Dotum, Arial;
+    }
+    
+    .subLink:hover {
+        color: red;
+        background-color: #4d4d4d;
+    }
+}

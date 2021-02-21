@@ -1,0 +1,56 @@
+doctype
+html
+    head
+        meta(charset='UTF-8')
+        title= Login
+        meta(name='viewport' content='width=device-width, user-scalable=no')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        link(rel='stylesheet' href='/join.css')
+    body
+      .joinForm
+        form(action='/v1/auth/join' method='post')
+          table
+            thead
+              caption Member Info
+              colgroup
+                col(width="120")
+                col(width="500")
+            tbody
+              tr
+                th ID
+                td 
+                  label.labelForm(type='text' name='memUserId' maxlength=20)
+              tr
+                th E-Mail
+                td
+                  label.labelForm(type='email' name='memEmail')
+              tr
+                th Name
+                td 
+                  label.labelForm(type='text' name='name')
+              tr
+                th Nick Name
+                td
+                  label.labelForm(type='text' name='nick')
+              tr
+                th Password
+                td
+                  label.labelForm(type='password' name='password')
+              tr
+                th Sex
+                td
+              tr
+                th Address
+                td
+                  label.labelForm(type='text' name='address')
+              tr
+                th Phone
+                td 
+                  label.labelForm(type='text' name='phone' maxlength=16)
+            tfoot
+              tr
+                td(colspan="2") 
+                  // TODO: 수정화면으로 넘어가게 하기
+                  input.btn(type='submit' value="Modify")
+                  input.btn(type="button" value="Back" onClick="location.href='/'")
+            

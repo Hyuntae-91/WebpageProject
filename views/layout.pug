@@ -1,0 +1,86 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    title My Project
+    meta(name='viewport' content='width=device-width, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    link(rel='stylesheet' href='/main.css')
+  body
+    .topHeader
+      h1.topHeaderH1 My Project for Back-end API
+      .myInfoSection
+        label(style='float:left; font-size: 25px;') Hello! 
+        .member-name= member.nick
+        input#my-id(type='hidden' value=member.memId)
+        p
+          a#my-profile.btn(href='/profile' style='margin-right: 15px;') My Info
+          a#logout.btn(onclick="logout()") Logout
+    nav
+      input#memberAuth(type="hidden" value=member.memAuth)
+      ul#mainUl
+        li.mainLi
+          a.mainLink(href="#") About
+        li.mainLi
+          a.mainLink(href="#") Forums
+          ul#subUl.subUl
+        li.mainLi
+          a.mainLink(href="#") Contact      
+    section
+      block sectionContent
+
+    script.
+      function logout() {
+        if (confirm('Are you sure you want to logout?')) {
+          location.href='/v1/auth/logout';
+        }
+      }
+
+      window.onload = async function() { 
+        try {
+          // admin 메뉴 추가를 위한 부분
+          let memAuth = document.querySelector('#memberAuth').value;
+          if (memAuth >= 5) {// TODO: 권한에 대한 enum값을 선언 할 필요성이 있음
+            let ul = document.getElementById("mainUl");
+            let newLi = document.createElement("li");
+            let newInput = document.createElement("input");
+            newInput.setAttribute("class", "mainLink");
+            newInput.setAttribute("type", "button");
+            newInput.setAttribute("onclick", "alert('TEST');"); // TODO: 해당 내용 지우고, action값 넣어야함
+            newInput.setAttribute("value", "Admin Forum");
+            newLi.setAttribute("id", "mainLi");
+            newLi.setAttribute("class", "mainLi");
+            newLi.appendChild(newInput);
+            ul.appendChild(newLi);
+          }
+
+          // forum 데이터를 Load하는 부분
+          let forumData = await fetch('/v1/getAllForumData', { headers: { 'Content-Type': 'application/json' } });
+          if (forumData.ok) {
+            forumData = await forumData.json();
+
+            if (forumData.results.length === 0)
+              throw "Forum Data is not exist!";
+
+            for (i = 0 ; i < forumData.results.length ; i++) {
+              let ul = document.getElementById("subUl");
+              let newLi = document.createElement("li");
+              let newInput = document.createElement("input");
+              newInput.setAttribute("class", "subLink");
+              newInput.setAttribute("type", "button");
+              newInput.setAttribute("onclick", "alert('TEST');"); // TODO: 해당 내용 지우고, action값 넣어야함
+              newInput.setAttribute("value", forumData.results[i].forumTitle);
+              newLi.setAttribute("id", "subLi");
+              newLi.setAttribute("class", "subLi");
+              newLi.appendChild(newInput);
+              ul.appendChild(newLi);
+            }
+          } else {
+            alert('error!');
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+
